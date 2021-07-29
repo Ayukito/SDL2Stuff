@@ -1,9 +1,11 @@
 #ifdef _WIN64
    //define something for Windows (64-bit)
-   #include <SDL2/SDL.h>
+    #define SDL_MAIN_HANDLED
+   #include "SDL2/SDL.h"
 #elif _WIN32
    //define something for Windows (32-bit)
-   #include <SDL2/SDL.h>
+    #define SDL_MAIN_HANDLED
+   #include "SDL2/SDL.h"
 #elif __APPLE__
     #include "TargetConditionals.h"
     #if TARGET_OS_IPHONE && TARGET_OS_SIMULATOR

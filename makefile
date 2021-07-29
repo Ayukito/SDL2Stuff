@@ -9,15 +9,35 @@ src = $(wildcard src/*.cpp)
 obj = $(src:.cpp=.o)
 
 CXXFLAGS = -Wall
-
 LDFLAGS = -lsdl2 -lsdl2main
+LDFLAGSWIN =
+LIBGL =
 
-ifeq ($(shell uname -s), Darwin) #  Platform detection test
-    #libgl = -framework OpenGL -framework GLUT
+INC_DIR = 
+LIB_DIR = 
+
+uname_S =
+
+ifeq ($(OS),Windows_NT)
+    uname_S := Windows
 else
-    #libgl = -lGL -lglut
+    uname_S := $(shell uname -s)
 endif
 
+ifeq ($(uname_S), Darwin)
+    #LIBGL = -framework OpenGL -framework GLUT
+endif
+ifeq ($(uname_S), Windows)
+    LDFLAGSWIN += -lmingw32
+    INC_DIR += deps/Windows/include
+    LIB_DIR += deps/Windows/lib
+    CXXFLAGS+=-w -Wl,-subsystem,windows
+    #LIBGL = -lGL -lglut
+endif
+
+CXXFLAGS += -I$(INC_DIR)
+CXXFLAGS += -L$(LIB_DIR)
+LDFLAGS += $(LIBGL)
 
 MACDIR=./deps/MacOS
 APPNAME=game
@@ -28,7 +48,7 @@ APPBUNDLEMACOS=$(APPBUNDLECONTENTS)/MacOS
 APPBUNDLERESOURCES=$(APPBUNDLECONTENTS)/Resources
 
 $(APPNAME): $(obj)
-	$(CC) $(CXXFLAGS) -o $@ $^ $(LDFLAGS)
+	$(CC) $(CXXFLAGS) -o $@ $^ $(LDFLAGSWIN) $(LDFLAGS)
 
 appbundle: $(MACDIR)/$(APPNAME).icns
 	$(RM) -rf $(APPBUNDLE)
