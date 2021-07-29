@@ -11,14 +11,12 @@
 		BA4AD10826B285160060B459 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA4AD10726B285160060B459 /* Foundation.framework */; };
 		BA4AD10A26B2851D0060B459 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA4AD10926B2851D0060B459 /* AudioToolbox.framework */; };
 		BA4AD10C26B285200060B459 /* AVFAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA4AD10B26B285200060B459 /* AVFAudio.framework */; };
-		BA4AD10E26B285250060B459 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA4AD10D26B285250060B459 /* OpenGLES.framework */; };
 		BA4AD11026B285350060B459 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA4AD10F26B285350060B459 /* QuartzCore.framework */; };
 		BA4AD11226B285460060B459 /* GameController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA4AD11126B285460060B459 /* GameController.framework */; };
 		BA4AD11426B2854E0060B459 /* CoreHaptics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA4AD11326B2854E0060B459 /* CoreHaptics.framework */; };
 		BA4AD11626B285550060B459 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA4AD11526B285550060B459 /* CoreMotion.framework */; };
 		BA4AD11826B285650060B459 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA4AD11726B285650060B459 /* CoreGraphics.framework */; };
 		BA4F292826B28BE5003065CF /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA4F292726B28BE5003065CF /* Metal.framework */; };
-		BA4F294B26B28FAC003065CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA4F294826B28FAC003065CF /* Assets.xcassets */; };
 		BA4F294C26B28FAC003065CF /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BA4F294926B28FAC003065CF /* main.cpp */; };
 		BA4F298726B29071003065CF /* ReadMe.txt in Resources */ = {isa = PBXBuildFile; fileRef = BA4F295826B29071003065CF /* ReadMe.txt */; };
 		BA4F298826B29071003065CF /* SDL_DS_Store in Resources */ = {isa = PBXBuildFile; fileRef = BA4F295926B29071003065CF /* SDL_DS_Store */; };
@@ -27,6 +25,8 @@
 		BA4F298B26B29071003065CF /* sdl_logo.pdf in Resources */ = {isa = PBXBuildFile; fileRef = BA4F295C26B29071003065CF /* sdl_logo.pdf */; };
 		BA4F298D26B29072003065CF /* Info-Framework.plist in Resources */ = {isa = PBXBuildFile; fileRef = BA4F295F26B29071003065CF /* Info-Framework.plist */; };
 		BA4F298E26B29087003065CF /* libSDL2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BA4F297626B29071003065CF /* libSDL2.a */; };
+		BA7D23A226B2B78300F9AF77 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA7D239426B2B78200F9AF77 /* Assets.xcassets */; };
+		BA7D23A326B2B7C600F9AF77 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA4AD10D26B285250060B459 /* OpenGLES.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -138,7 +138,6 @@
 		BA4AD11526B285550060B459 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		BA4AD11726B285650060B459 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		BA4F292726B28BE5003065CF /* Metal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Metal.framework; path = System/Library/Frameworks/Metal.framework; sourceTree = SDKROOT; };
-		BA4F294826B28FAC003065CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BA4F294926B28FAC003065CF /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		BA4F295326B29071003065CF /* SDL.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = SDL.xcodeproj; sourceTree = "<group>"; };
 		BA4F295826B29071003065CF /* ReadMe.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ReadMe.txt; sourceTree = "<group>"; };
@@ -148,6 +147,7 @@
 		BA4F295C26B29071003065CF /* sdl_logo.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = sdl_logo.pdf; sourceTree = "<group>"; };
 		BA4F295E26B29071003065CF /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BA4F295F26B29071003065CF /* Info-Framework.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-Framework.plist"; sourceTree = "<group>"; };
+		BA7D239426B2B78200F9AF77 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = deps/iOS/Assets.xcassets; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +155,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA7D23A326B2B7C600F9AF77 /* OpenGLES.framework in Frameworks */,
 				BA4F298E26B29087003065CF /* libSDL2.a in Frameworks */,
 				BA4F292826B28BE5003065CF /* Metal.framework in Frameworks */,
 				BA4AD11826B285650060B459 /* CoreGraphics.framework in Frameworks */,
@@ -162,7 +163,6 @@
 				BA4AD11426B2854E0060B459 /* CoreHaptics.framework in Frameworks */,
 				BA4AD11226B285460060B459 /* GameController.framework in Frameworks */,
 				BA4AD11026B285350060B459 /* QuartzCore.framework in Frameworks */,
-				BA4AD10E26B285250060B459 /* OpenGLES.framework in Frameworks */,
 				BA4AD10C26B285200060B459 /* AVFAudio.framework in Frameworks */,
 				BA4AD10A26B2851D0060B459 /* AudioToolbox.framework in Frameworks */,
 				BA4AD10826B285160060B459 /* Foundation.framework in Frameworks */,
@@ -214,7 +214,7 @@
 		BA4F294726B28FAC003065CF /* src */ = {
 			isa = PBXGroup;
 			children = (
-				BA4F294826B28FAC003065CF /* Assets.xcassets */,
+				BA7D239426B2B78200F9AF77 /* Assets.xcassets */,
 				BA4F294926B28FAC003065CF /* main.cpp */,
 			);
 			path = src;
@@ -439,9 +439,9 @@
 				BA4F298926B29071003065CF /* License.txt in Resources */,
 				BA4F298726B29071003065CF /* ReadMe.txt in Resources */,
 				BA4F298826B29071003065CF /* SDL_DS_Store in Resources */,
-				BA4F294B26B28FAC003065CF /* Assets.xcassets in Resources */,
 				BA4F298A26B29071003065CF /* SDL.info in Resources */,
 				BA4F298D26B29072003065CF /* Info-Framework.plist in Resources */,
+				BA7D23A226B2B78300F9AF77 /* Assets.xcassets in Resources */,
 				BA4F298B26B29071003065CF /* sdl_logo.pdf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
