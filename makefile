@@ -20,14 +20,14 @@ endif
 
 
 MACDIR=./deps/MacOS
-APPNAME=GAME
+APPNAME=game
 
 APPBUNDLE=$(APPNAME).app
 APPBUNDLECONTENTS=$(APPBUNDLE)/Contents
 APPBUNDLEMACOS=$(APPBUNDLECONTENTS)/MacOS
 APPBUNDLERESOURCES=$(APPBUNDLECONTENTS)/Resources
 
-game: $(obj)
+$(APPNAME): $(obj)
 	$(CC) $(CXXFLAGS) -o $@ $^ $(LDFLAGS)
 
 appbundle: $(MACDIR)/$(APPNAME).icns
@@ -41,7 +41,7 @@ appbundle: $(MACDIR)/$(APPNAME).icns
 	$(CP) $(MACDIR)/$(APPNAME).icns $(APPBUNDLERESOURCES)/
 	$(RM) -r $(MACDIR)/$(APPNAME).icns
 	$(CP) $(APPNAME) $(APPBUNDLEMACOS)/
-	$(RM) -f game
+	$(RM) -f $(APPNAME)
 
 $(MACDIR)/$(APPNAME).icns: $(MACDIR)/$(APPNAME).png
 	$(RM) -rf $(APPNAME).iconset
@@ -61,4 +61,4 @@ $(MACDIR)/$(APPNAME).icns: $(MACDIR)/$(APPNAME).png
 
 .PHONY: clean
 clean:
-	rm -f $(obj) game
+	rm -f -R $(obj) $(APPNAME) $(APPNAME).app
