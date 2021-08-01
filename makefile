@@ -28,8 +28,8 @@ ifeq ($(uname_S), Windows)
     build_target := all_windows
     STD := -std=c11
     LDFLAGS := -lmingw32 -lSDL2 -lSDL2main
-    #LDFLAGS += -static -lkernel32 -ladvapi32 -lgdi32 -limm32 -lmsvcrt -lole32 -loleaut32 -lsetupapi -lshell32 -luser32 -lversion -lwinmm
-    # Above links statically, add libSDL2.a to deps/Windows/libs instead of libSDL2.dll.a
+    LDFLAGS += -static -lkernel32 -ladvapi32 -lgdi32 -limm32 -lmsvcrt -lole32 -loleaut32 -lsetupapi -lshell32 -luser32 -lversion -lwinmm
+    # Above links statically, is this necessary..?
     INC_DIR := deps/Windows/include
     LIB_DIR := deps/Windows/lib
     CXXFLAGS+=-w -Wl,-subsystem,windows
