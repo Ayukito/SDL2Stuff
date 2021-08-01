@@ -25,7 +25,7 @@ endif
 
 ifeq ($(uname_S), Windows)
     #LIBGL = -lGL -lglut
-	build_target := all_windows
+    build_target := all_windows
     STD := -std=c11
     LDFLAGS := -lmingw32 -lSDL2 -lSDL2main
     INC_DIR := deps/Windows/include
@@ -35,12 +35,12 @@ ifeq ($(uname_S), Windows)
     CXXFLAGS += -L$(LIB_DIR)
 else ifeq ($(uname_S), Darwin)
     #LIBGL = -framework OpenGL -framework GLUT
-	build_target := all_mac
+    build_target := all_mac
     STD := -std=gnu11
     LDFLAGS := -Fdeps/MacOS/Frameworks -Wl,-rpath,@executable_path/../Frameworks -framework SDL2
 else ifeq ($(uname_S), Linux)
     #LIBGL = -lGL -lglut
-	build_target := all_linux
+    build_target := all_linux
     STD := -std=c11
     LDFLAGS := $(shell sdl2-config --libs)
     CXXFLAGS += $(shell sdl2-config --cflags)
