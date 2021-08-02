@@ -45,7 +45,7 @@ else ifeq ($(uname_S), Linux)
     build_target := all_linux
     STD := -std=c11
     LDFLAGS := $(shell sdl2-config --libs)
-    CXXFLAGS += $(shell sdl2-config --cflags)
+    CXXFLAGS += $(shell sdl2-config --cflags) -no-pie
 endif
 
 LDFLAGS += $(LIBGL)
