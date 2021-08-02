@@ -41,6 +41,7 @@ int main( int argc, char *argv[] ){
                 break;
             }
         }
+        SDL_Delay(1000/60);
         /* do some other stuff here -- draw your app, etc. */
     }
     SDL_DestroyRenderer(renderer);
