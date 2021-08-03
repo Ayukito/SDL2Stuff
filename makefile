@@ -42,8 +42,9 @@ ifeq ($(uname_S), Windows)
     STD := -std=c11
     INCDIR += -I$(WINDIR)/include
     LIBDIR += -L$(WINDIR)/lib
-    #CXXFLAGS+=-w -Wl,-subsystem,windows
-
+	ifneq ($(DEBUG), true)
+        CXXFLAGS+=-w -Wl,-subsystem,windows
+	endif
     LDFLAGS := -lmingw32 -lSDL2 -lSDL2main -lphysfs
 	ifeq ($(DYNAMIC), true)
         LDFLAGS += -static-libgcc -static-libstdc++ -Wl,-Bstatic -lstdc++ -lpthread -Wl,-Bdynamic
