@@ -6,20 +6,26 @@ src = $(wildcard src/*.cpp)
 obj = $(src:.cpp=.o)
 
 DYNAMIC = true
+DEBUG = true
 
 BUILDDIR=./build
 MACDIR=./deps/MacOS
 WINDIR=./deps/Windows
 LNXDIR=./deps/Linux
 
-CXXFLAGS = -Wall -Ideps/include
+INCDIR = -I./deps/include
+LIBDIR =
+
+CXXFLAGS = -Wall
 LIBGL =
 # development (3), and production (0)
-DEBUG := -g3
+ifeq ($(DEBUG), true)
+    DEBUGFLAGS := -g3
+endif
 # Optimizations
-OPT := -O3
+OPTFLAGS := -O3
 
-CXXFLAGS += $(DEBUG) $(OPT)
+CXXFLAGS += $(DEBUGFLAGS) $(OPTFLAGS)
 
 uname_S =
 
@@ -34,7 +40,11 @@ ifeq ($(uname_S), Windows)
     #LIBGL = -lGL -lglut
     build_target := all_windows
     STD := -std=c11
-    LDFLAGS := -lmingw32 -L$(WINDIR)/lib -lSDL2 -lSDL2main -lphysfs
+    INCDIR += -I$(WINDIR)/include
+    LIBDIR += -L$(WINDIR)/lib
+    #CXXFLAGS+=-w -Wl,-subsystem,windows
+
+    LDFLAGS := -lmingw32 -lSDL2 -lSDL2main -lphysfs
 	ifeq ($(DYNAMIC), true)
         LDFLAGS += -static-libgcc -static-libstdc++ -Wl,-Bstatic -lstdc++ -lpthread -Wl,-Bdynamic
         # Above links statically to only the necessary things
@@ -42,11 +52,6 @@ ifeq ($(uname_S), Windows)
         LDFLAGS += -static -lkernel32 -ladvapi32 -lgdi32 -limm32 -lmsvcrt -lole32 -loleaut32 -lsetupapi -lshell32 -luser32 -lversion -lwinmm
          # Above links everything statically
 	endif
-    INC_DIR := $(WINDIR)/include
-    LIB_DIR := $(WINDIR)/lib
-    #CXXFLAGS+=-w -Wl,-subsystem,windows
-    CXXFLAGS += -I$(INC_DIR)
-    CXXFLAGS += -L$(LIB_DIR)
 else ifeq ($(uname_S), Darwin)
     #LIBGL = -framework OpenGL -framework GLUT
     build_target := all_mac
@@ -61,6 +66,8 @@ else ifeq ($(uname_S), Linux)
 endif
 
 LDFLAGS += $(LIBGL)
+CXXFLAGS += $(INCDIR)
+CXXFLAGS += $(LIBDIR)
 
 # Mac app bundle variables
 APPBUNDLE=$(BUILDDIR)/$(APPNAME).app
