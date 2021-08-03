@@ -1,4 +1,4 @@
-# SDL2Stuff\
+# SDL2Stuff
 My first usage of SDL2, will be absolute trash for a while.\
 \
 \
@@ -6,15 +6,21 @@ Plans are to make some sort of game, but I'm still just learning C++, makefiles,
 \
 \
 Windows:\
-Builds using MinGW64, may look into providing a VS 2019 project\
-Builds with includes and lib files sourced from SDL2-2.0.14 MinGW Devel\
-For now builds statically so the file size is large (~13mb). I don't know what to really do about that\
-Uses rm -rf in the makefile so will probably not build with default terminal. Will be fixed later, maybe\
+Builds using MinGW64\
+Builds with includes and .DLLs sourced from SDL2-2.0.14 MinGW Devel.\
+Builds dynamically, but has a switch to change that in the makefile. Static libs are not in repo.\
 \
 Mac:\
-Builds using xcode clang with SDL2 and SDL2-Image installed through brew\
+Builds using clang with SDL2 installed through brew.\
+Bundles SDL2.framework into the .app for easy distribution.\
+Technically built statically as SDL2 is currently the only dependancy not included with the OS.\
 \
 Linux:\
-Builds using gnu g++ on a modified Ubuntu 20.04.2 LTS build for T2 MacBooks, seems to work fine.\
+Builds using gnu g++ with libsdl2-dev installed through the package manager.\
 Builds with -no-pie because otherwise it's seen as a Shared Library for some reason.\
-Currently uses libsdl2-dev and lib-sdl2-image-dev packages\
+No idea if this can be statically built on Linux or not.\
+\
+\
+Vita and Switch:\
+Not added to repo yet, will likely require their own makefiles just for sanity\
+Will build using LibNX/Devkitpro for Switch and VitaSDK for Vita\
