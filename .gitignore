@@ -61,5 +61,5 @@ DerivedData/
 
 *.DS_Store
 
-## VsCode cpp properties
-*/c_cpp_properties.json
+*.zip
+*.7z

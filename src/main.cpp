@@ -1,5 +1,6 @@
 #include <iostream>
 #include "platform_include.h"
+#include "PhysFS/physfs.h"
 
 using namespace std;
 
@@ -30,6 +31,7 @@ int main( int argc, char *argv[] ){
     SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255);
     SDL_RenderClear(renderer);
     SDL_RenderPresent(renderer);
+    PHYSFS_init(NULL);
 
     SDL_Event event;
     bool running = true;
@@ -42,6 +44,7 @@ int main( int argc, char *argv[] ){
             }
         }
         SDL_Delay(1000/60);
+        cout << PHYSFS_isInit() << endl;
         /* do some other stuff here -- draw your app, etc. */
     }
     SDL_DestroyRenderer(renderer);

@@ -5,7 +5,14 @@ CC = g++
 src = $(wildcard src/*.cpp)
 obj = $(src:.cpp=.o)
 
-CXXFLAGS = -Wall
+DYNAMIC = true
+
+BUILDDIR=./build
+MACDIR=./deps/MacOS
+WINDIR=./deps/Windows
+LNXDIR=./deps/Linux
+
+CXXFLAGS = -Wall -Ideps/include
 LIBGL =
 # development (3), and production (0)
 DEBUG := -g3
@@ -27,33 +34,33 @@ ifeq ($(uname_S), Windows)
     #LIBGL = -lGL -lglut
     build_target := all_windows
     STD := -std=c11
-    LDFLAGS := -lmingw32 -lSDL2 -lSDL2main
-    LDFLAGS += -static -lkernel32 -ladvapi32 -lgdi32 -limm32 -lmsvcrt -lole32 -loleaut32 -lsetupapi -lshell32 -luser32 -lversion -lwinmm
-    # Above links statically, is this necessary..?
-    INC_DIR := deps/Windows/include
-    LIB_DIR := deps/Windows/lib
-    CXXFLAGS+=-w -Wl,-subsystem,windows
+    LDFLAGS := -lmingw32 -L$(WINDIR)/lib -lSDL2 -lSDL2main -lphysfs
+	ifeq ($(DYNAMIC), true)
+        LDFLAGS += -static-libgcc -static-libstdc++ -Wl,-Bstatic -lstdc++ -lpthread -Wl,-Bdynamic
+        # Above links statically to only the necessary things
+	else
+        LDFLAGS += -static -lkernel32 -ladvapi32 -lgdi32 -limm32 -lmsvcrt -lole32 -loleaut32 -lsetupapi -lshell32 -luser32 -lversion -lwinmm
+         # Above links everything statically
+	endif
+    INC_DIR := $(WINDIR)/include
+    LIB_DIR := $(WINDIR)/lib
+    #CXXFLAGS+=-w -Wl,-subsystem,windows
     CXXFLAGS += -I$(INC_DIR)
     CXXFLAGS += -L$(LIB_DIR)
 else ifeq ($(uname_S), Darwin)
     #LIBGL = -framework OpenGL -framework GLUT
     build_target := all_mac
     STD := -std=gnu11
-    LDFLAGS := -Fdeps/MacOS/Frameworks -Wl,-rpath,@executable_path/../Frameworks -framework SDL2
+    LDFLAGS := -F$(MACDIR)/Frameworks -Wl,-rpath,@executable_path/../Frameworks -framework SDL2
 else ifeq ($(uname_S), Linux)
     #LIBGL = -lGL -lglut
     build_target := all_linux
-    STD := -std=c11
+    STD := -std=gnu11
     LDFLAGS := $(shell sdl2-config --libs)
     CXXFLAGS += $(shell sdl2-config --cflags) -no-pie
 endif
 
 LDFLAGS += $(LIBGL)
-
-BUILDDIR=./build
-MACDIR=./deps/MacOS
-WINDIR=./deps/Windows
-LNXDIR=./deps/Linux
 
 # Mac app bundle variables
 APPBUNDLE=$(BUILDDIR)/$(APPNAME).app
@@ -74,7 +81,10 @@ all_linux: $(BUILDDIR) $(BUILDDIR)/$(APPNAME) linux
 mac: osxapp
 
 windows:
-	cp $(WINDIR)/lib/SDL2.dll $(BUILDDIR)
+    ifeq ($(DYNAMIC), true)
+		cp $(WINDIR)/lib/SDL2.dll $(BUILDDIR)
+		cp $(WINDIR)/lib/libphysfs.dll $(BUILDDIR)
+    endif
 
 linux: 
 
