@@ -50,9 +50,15 @@ int main( int argc, char *argv[] ){
     SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255);
     SDL_RenderClear(renderer);
     SDL_RenderPresent(renderer);
+
     PHYSFS_init(NULL);
 
-    int res = PHYSFS_mount("Resources", "/", 1);
+    #ifdef __SWITCH__
+	    romfsInit();
+    #endif
+
+	int res;
+	res = PHYSFS_mount(strcat(FSRoot,"Resources"), "/", 1);
     cout << "mounted " << res << endl;
 
     bool exists = false;
@@ -73,7 +79,12 @@ int main( int argc, char *argv[] ){
                 break;
             }
         }
-        SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255);
+		if (exists){
+			SDL_SetRenderDrawColor(renderer, 0, 0, 255, 255);
+		}else{
+			SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255);
+		}
+        
         SDL_RenderClear(renderer);
         SDL_RenderPresent(renderer);
         SDL_Delay(1000/60);
