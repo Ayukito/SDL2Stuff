@@ -29,4 +29,7 @@
 #elif __posix
     // POSIX
     #include <SDL2/SDL.h>
+#elif __SWITCH__
+    #include <switch.h>
+    #include <SDL2/SDL.h>
 #endif

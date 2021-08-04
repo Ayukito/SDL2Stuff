@@ -24,8 +24,8 @@ string PHYSFS_readFile( string path){
 }
 
 int main( int argc, char *argv[] ){
-    
-    if (SDL_Init(SDL_INIT_EVERYTHING) < 0){
+    // Need to initialize these two on switch specifically, otherwise nothing happens
+    if (SDL_Init(SDL_INIT_VIDEO | SDL_INIT_JOYSTICK) < 0){
         cout << "There was an error initilizing SDL"  << endl
         << SDL_GetError() << endl;
         return 0;
@@ -38,7 +38,7 @@ int main( int argc, char *argv[] ){
                                 SDL_WINDOWPOS_UNDEFINED,
                                 1280,
                                 720,
-                                SDL_WINDOW_RESIZABLE | SDL_WINDOW_ALLOW_HIGHDPI );
+                                SDL_WINDOW_RESIZABLE | SDL_WINDOW_ALLOW_HIGHDPI | SDL_WINDOW_SHOWN );
     if (window == NULL){
         cout << "There was an error initilizing the SDL Window"  << endl
         << SDL_GetError() << endl;
@@ -73,6 +73,9 @@ int main( int argc, char *argv[] ){
                 break;
             }
         }
+        SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255);
+        SDL_RenderClear(renderer);
+        SDL_RenderPresent(renderer);
         SDL_Delay(1000/60);
         //cout << PHYSFS_isInit() << endl;
         /* do some other stuff here -- draw your app, etc. */

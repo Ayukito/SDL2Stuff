@@ -139,5 +139,13 @@ $(MACDIR)/$(APPNAME).icns: $(MACDIR)/$(APPNAME).png
 	iconutil -c icns -o $(MACDIR)/$(APPNAME).icns $(APPNAME).iconset
 	rm -r $(APPNAME).iconset
 
+# HANDHELDS:
+
+switch:
+	make -f Switch.mk
+
+vita:
+	make -f Vita.mk
+
 clean:
 	rm -f -R $(obj) $(BUILDDIR)
