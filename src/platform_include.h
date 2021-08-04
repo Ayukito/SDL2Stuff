@@ -41,7 +41,7 @@
 #elif __SWITCH__
     #include <switch.h>
     #include <SDL2/SDL.h>
-	char* FSRoot = (char*)"romfs:/";
+    char* FSRoot = (char*)"romfs:/";
 #elif __VITA__
     #include <SDL2/SDL.h>
     char* FSRoot = (char*)"app0:/";
