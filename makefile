@@ -47,8 +47,9 @@ ifeq ($(uname_S), Windows)
 	endif
     LDFLAGS := -lmingw32 -lSDL2 -lSDL2main -lphysfs
 	ifeq ($(DYNAMIC), true)
-        LDFLAGS += -static-libgcc -static-libstdc++ -Wl,-Bstatic -lstdc++ -lpthread -Wl,-Bdynamic
+        #LDFLAGS += -static-libgcc -static-libstdc++ -Wl,-Bstatic -lstdc++ -lpthread -Wl,-Bdynamic
         # Above links statically to only the necessary things
+        # Uncomment it if your compiler isn't incompetent and makes the file size 13mb larger.
 	else
         LDFLAGS += -static -lkernel32 -ladvapi32 -lgdi32 -limm32 -lmsvcrt -lole32 -loleaut32 -lsetupapi -lshell32 -luser32 -lversion -lwinmm
          # Above links everything statically
@@ -94,8 +95,7 @@ mac: osxapp
 
 windows:
     ifeq ($(DYNAMIC), true)
-		cp $(WINDIR)/lib/SDL2.dll $(BUILDDIR)
-		cp $(WINDIR)/lib/libphysfs.dll $(BUILDDIR)
+		cp $(WINDIR)/lib/*.dll $(BUILDDIR)
 		cp -R ./Resources $(BUILDDIR)
     endif
 
