@@ -44,5 +44,5 @@
 	char* FSRoot = (char*)"romfs:/";
 #elif __VITA__
     #include <SDL2/SDL.h>
-    char* FSRoot = (char*)"";
+    char* FSRoot = (char*)"app0:/";
 #endif

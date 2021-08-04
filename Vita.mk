@@ -28,7 +28,7 @@ LIBS += -lSDL2 -lphysfs -lSceDisplay_stub -lSceCtrl_stub -lSceAudio_stub -lSceSy
 all: mkdr package
 
 mkdr:
-	mkdir $(BUILDDIR)
+	mkdir -p $(BUILDDIR)
 
 package: build/$(PROJECT).vpk
 
@@ -38,8 +38,9 @@ $(BUILDDIR)/$(PROJECT).vpk: $(BUILDDIR)/eboot.bin $(BUILDDIR)/param.sfo
 		--add deps/Vita/sce_sys/livearea/contents/bg.png=sce_sys/livearea/contents/bg.png \
 		--add deps/Vita/sce_sys/livearea/contents/startup.png=sce_sys/livearea/contents/startup.png \
 		--add deps/Vita/sce_sys/livearea/contents/template.xml=sce_sys/livearea/contents/template.xml \
-		--add Resources/*=Resources/*\
+		--add Resources/test.txt=Resources/test.txt \
 	$(BUILDDIR)/$(PROJECT).vpk
+    # TODO: Add batch Resource adding
 
 $(BUILDDIR)/eboot.bin: $(BUILDDIR)/$(PROJECT).velf
 	vita-make-fself $(BUILDDIR)/$(PROJECT).velf build/eboot.bin
