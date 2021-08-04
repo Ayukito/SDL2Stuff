@@ -20,7 +20,6 @@ Builds using gnu g++ with libsdl2-dev installed through the package manager.\
 Builds with -no-pie because otherwise it's seen as a Shared Library for some reason.\
 No idea if this can be statically built on Linux or not.\
 \
-\
 Vita and Switch:\
 Both build using their respective homebrew SDKs and their ports of SDL2 and PhysFS\
 Switch's ifdef is \_\_SWITCH\_\_ and Vita's ifdef is \_\_VITA\_\_\
