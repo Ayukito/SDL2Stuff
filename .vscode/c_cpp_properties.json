@@ -28,7 +28,7 @@
             "name": "Mac",
             "includePath": [
                 "${workspaceFolder}/deps/include/",
-                "${workspaceFolder}/deps/Mac/include/"
+                "${workspaceFolder}/deps/MacOS/include/"
             ],
             "defines": [],
             "cStandard": "c11",
