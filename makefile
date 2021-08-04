@@ -96,6 +96,7 @@ windows:
     ifeq ($(DYNAMIC), true)
 		cp $(WINDIR)/lib/SDL2.dll $(BUILDDIR)
 		cp $(WINDIR)/lib/libphysfs.dll $(BUILDDIR)
+		cp -R ./Resources $(BUILDDIR)
     endif
 
 linux: 
@@ -113,6 +114,7 @@ osxapp: $(MACDIR)/$(APPNAME).icns $(BUILDDIR) $(BUILDDIR)/$(APPNAME)
 	mkdir $(APPBUNDLECONTENTS)
 	mkdir $(APPBUNDLEMACOS)
 	mkdir $(APPBUNDLERESOURCES)
+	cp -R ./Resources $(APPBUNDLERESOURCES)
 	cp -R $(MACDIR)/Frameworks $(APPBUNDLECONTENTS)
 	cp $(MACDIR)/Info.plist $(APPBUNDLECONTENTS)/Info.plist
 	cp $(MACDIR)/PkgInfo $(APPBUNDLECONTENTS)/
