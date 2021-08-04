@@ -23,5 +23,5 @@ No idea if this can be statically built on Linux or not.\
 \
 Vita and Switch:\
 Both build using their respective homebrew SDKs and their ports of SDL2 and PhysFS\
-Switch's ifdef is __SWITCH__ and Vita's ifdef is __VITA__\
-The switch makefile is dumb and dumps all the .o files into /build\
+Switch's ifdef is \_\_SWITCH\_\_ and Vita's ifdef is \_\_VITA\_\_\
+The switch makefile is dumb and dumps all the .o files into /build
