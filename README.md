@@ -22,5 +22,6 @@ No idea if this can be statically built on Linux or not.\
 \
 \
 Vita and Switch:\
-Not added to repo yet, will likely require their own makefiles just for sanity\
-Will build using LibNX/Devkitpro for Switch and VitaSDK for Vita\
+Both build using their respective homebrew SDKs and their ports of SDL2 and PhysFS\
+Switch's ifdef is __SWITCH__ and Vita's ifdef is __VITA__\
+The switch makefile is dumb and dumps all the .o files into /build\
