@@ -58,7 +58,13 @@ int main( int argc, char *argv[] ){
     #endif
 
 	int res;
-	res = PHYSFS_mount(strcat(FSRoot,"Resources"), "/", 1);
+    string tmp = FSRoot + "Resources";
+    if (abspath != NULL) {
+        setupPath();
+        tmp = abspath + tmp;
+    }
+    char *array = &tmp[0];
+	res = PHYSFS_mount(array, "/", 1);
     cout << "mounted " << res << endl;
 
     bool exists = false;
