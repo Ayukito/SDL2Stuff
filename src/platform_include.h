@@ -28,6 +28,7 @@ using namespace std;
         #include <SDL2/SDL.h>
         string FSRoot = "";
         char* abspath = NULL;
+        inline void setupPath(){}
     #else
         #define TARGET_OS_OSX 1
         #include <mach-o/dyld.h>

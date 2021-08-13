@@ -96,7 +96,7 @@ mac: osxapp
 windows:
     ifeq ($(DYNAMIC), true)
 		cp $(WINDIR)/lib/*.dll $(BUILDDIR)
-		cp -R ./Resources $(BUILDDIR)
+		cp -R ./Assets $(BUILDDIR)
     endif
 
 linux: 
@@ -114,7 +114,7 @@ osxapp: $(MACDIR)/$(APPNAME).icns $(BUILDDIR) $(BUILDDIR)/$(APPNAME)
 	mkdir $(APPBUNDLECONTENTS)
 	mkdir $(APPBUNDLEMACOS)
 	mkdir $(APPBUNDLERESOURCES)
-	cp -R ./Resources $(APPBUNDLERESOURCES)
+	cp -R ./Assets $(APPBUNDLERESOURCES)
 	cp -R $(MACDIR)/Frameworks $(APPBUNDLECONTENTS)
 	cp $(MACDIR)/Info.plist $(APPBUNDLECONTENTS)/Info.plist
 	cp $(MACDIR)/PkgInfo $(APPBUNDLECONTENTS)/

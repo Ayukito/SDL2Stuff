@@ -1,4 +1,5 @@
 #include <iostream>
+#include <fstream>
 #include "platform_include.h"
 #include "PhysFS/physfs.h"
 
@@ -58,7 +59,7 @@ int main( int argc, char *argv[] ){
     #endif
 
 	int res;
-    string tmp = FSRoot + "Resources";
+    string tmp = FSRoot + "Assets";
     if (abspath != NULL) {
         setupPath();
         tmp = abspath + tmp;

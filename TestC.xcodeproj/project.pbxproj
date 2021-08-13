@@ -18,14 +18,10 @@
 		BA4AD11826B285650060B459 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA4AD11726B285650060B459 /* CoreGraphics.framework */; };
 		BA4F292826B28BE5003065CF /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA4F292726B28BE5003065CF /* Metal.framework */; };
 		BA4F294C26B28FAC003065CF /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BA4F294926B28FAC003065CF /* main.cpp */; };
-		BA4F298726B29071003065CF /* ReadMe.txt in Resources */ = {isa = PBXBuildFile; fileRef = BA4F295826B29071003065CF /* ReadMe.txt */; };
-		BA4F298826B29071003065CF /* SDL_DS_Store in Resources */ = {isa = PBXBuildFile; fileRef = BA4F295926B29071003065CF /* SDL_DS_Store */; };
-		BA4F298926B29071003065CF /* License.txt in Resources */ = {isa = PBXBuildFile; fileRef = BA4F295A26B29071003065CF /* License.txt */; };
-		BA4F298A26B29071003065CF /* SDL.info in Resources */ = {isa = PBXBuildFile; fileRef = BA4F295B26B29071003065CF /* SDL.info */; };
-		BA4F298B26B29071003065CF /* sdl_logo.pdf in Resources */ = {isa = PBXBuildFile; fileRef = BA4F295C26B29071003065CF /* sdl_logo.pdf */; };
-		BA4F298D26B29072003065CF /* Info-Framework.plist in Resources */ = {isa = PBXBuildFile; fileRef = BA4F295F26B29071003065CF /* Info-Framework.plist */; };
 		BA4F298E26B29087003065CF /* libSDL2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BA4F297626B29071003065CF /* libSDL2.a */; };
-		BA7D23A226B2B78300F9AF77 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA7D239426B2B78200F9AF77 /* Assets.xcassets */; };
+		BA5BDBF526C6041200514EDA /* libphysfs.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BA5BDBF426C6041200514EDA /* libphysfs.a */; };
+		BA5BDBFC26C60BBE00514EDA /* test.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = BA5BDBFB26C60BBE00514EDA /* test.txt */; };
+		BA5BDC0D26C60CB700514EDA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA7D239426B2B78200F9AF77 /* Assets.xcassets */; };
 		BA7D23A326B2B7C600F9AF77 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA4AD10D26B285250060B459 /* OpenGLES.framework */; };
 /* End PBXBuildFile section */
 
@@ -121,7 +117,34 @@
 			remoteGlobalIDString = A75FDB6E23E3A2C900529352;
 			remoteInfo = "hidapi-tvOS";
 		};
+		BA5BDBF026C6040400514EDA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BA4F295326B29071003065CF /* SDL.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F3CB94BA26B5E0A400B9C980;
+			remoteInfo = "SDLmain-iOS";
+		};
+		BA5BDBF226C6040400514EDA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BA4F295326B29071003065CF /* SDL.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F3CB963826B5E0A600B9C980;
+			remoteInfo = "SDLmain-tvOS";
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		BA5BDBF626C6046500514EDA /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 12;
+			dstPath = Assets;
+			dstSubfolderSpec = 7;
+			files = (
+				BA5BDBFC26C60BBE00514EDA /* test.txt in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		BA4AD0E226B284440060B459 /* TestC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestC.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -147,6 +170,8 @@
 		BA4F295C26B29071003065CF /* sdl_logo.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = sdl_logo.pdf; sourceTree = "<group>"; };
 		BA4F295E26B29071003065CF /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BA4F295F26B29071003065CF /* Info-Framework.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-Framework.plist"; sourceTree = "<group>"; };
+		BA5BDBF426C6041200514EDA /* libphysfs.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libphysfs.a; path = deps/iOS/lib/libphysfs.a; sourceTree = "<group>"; };
+		BA5BDBFB26C60BBE00514EDA /* test.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = test.txt; path = Assets/test.txt; sourceTree = "<group>"; };
 		BA7D239426B2B78200F9AF77 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = deps/iOS/Assets.xcassets; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -155,6 +180,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA5BDBF526C6041200514EDA /* libphysfs.a in Frameworks */,
 				BA7D23A326B2B7C600F9AF77 /* OpenGLES.framework in Frameworks */,
 				BA4F298E26B29087003065CF /* libSDL2.a in Frameworks */,
 				BA4F292826B28BE5003065CF /* Metal.framework in Frameworks */,
@@ -176,6 +202,7 @@
 		BA4AD0D926B284440060B459 = {
 			isa = PBXGroup;
 			children = (
+				BA5BDBFB26C60BBE00514EDA /* test.txt */,
 				BA4F294726B28FAC003065CF /* src */,
 				BA4AD0E326B284440060B459 /* Products */,
 				BA4AD10026B2849C0060B459 /* Frameworks */,
@@ -193,6 +220,7 @@
 		BA4AD10026B2849C0060B459 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BA5BDBF426C6041200514EDA /* libphysfs.a */,
 				BA4F295226B29071003065CF /* SDL */,
 				BA4F292726B28BE5003065CF /* Metal.framework */,
 				BA4AD11726B285650060B459 /* CoreGraphics.framework */,
@@ -235,6 +263,8 @@
 		BA4F295426B29071003065CF /* Products */ = {
 			isa = PBXGroup;
 			children = (
+				BA5BDBF126C6040400514EDA /* libSDLmain.a */,
+				BA5BDBF326C6040400514EDA /* libSDLmain.a */,
 				BA4F296E26B29071003065CF /* SDL2.framework */,
 				BA4F297026B29071003065CF /* SDL2.framework */,
 				BA4F297226B29071003065CF /* SDL2.framework */,
@@ -290,6 +320,7 @@
 				BA4AD0DE26B284440060B459 /* Sources */,
 				BA4AD0DF26B284440060B459 /* Frameworks */,
 				BA4AD0E026B284440060B459 /* Resources */,
+				BA5BDBF626C6046500514EDA /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -429,6 +460,20 @@
 			remoteRef = BA4F298526B29071003065CF /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		BA5BDBF126C6040400514EDA /* libSDLmain.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libSDLmain.a;
+			remoteRef = BA5BDBF026C6040400514EDA /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		BA5BDBF326C6040400514EDA /* libSDLmain.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libSDLmain.a;
+			remoteRef = BA5BDBF226C6040400514EDA /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
@@ -436,13 +481,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BA4F298926B29071003065CF /* License.txt in Resources */,
-				BA4F298726B29071003065CF /* ReadMe.txt in Resources */,
-				BA4F298826B29071003065CF /* SDL_DS_Store in Resources */,
-				BA4F298A26B29071003065CF /* SDL.info in Resources */,
-				BA4F298D26B29072003065CF /* Info-Framework.plist in Resources */,
-				BA7D23A226B2B78300F9AF77 /* Assets.xcassets in Resources */,
-				BA4F298B26B29071003065CF /* sdl_logo.pdf in Resources */,
+				BA5BDC0D26C60CB700514EDA /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -583,11 +622,18 @@
 				DEVELOPMENT_TEAM = PS823CSMA6;
 				ENABLE_BITCODE = NO;
 				GCC_C_LANGUAGE_STANDARD = "compiler-default";
-				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/deps/iOS/include";
+				HEADER_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/deps/iOS/include",
+					"$(PROJECT_DIR)/deps/include",
+				);
 				INFOPLIST_FILE = deps/iOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/deps/iOS/lib",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.Lynn.SDLTest.TestC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -606,11 +652,18 @@
 				DEVELOPMENT_TEAM = PS823CSMA6;
 				ENABLE_BITCODE = NO;
 				GCC_C_LANGUAGE_STANDARD = "compiler-default";
-				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/deps/iOS/include";
+				HEADER_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/deps/iOS/include",
+					"$(PROJECT_DIR)/deps/include",
+				);
 				INFOPLIST_FILE = deps/iOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/deps/iOS/lib",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.Lynn.SDLTest.TestC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
