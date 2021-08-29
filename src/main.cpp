@@ -56,10 +56,16 @@ int main( int argc, char *argv[] ){
 
     #ifdef __SWITCH__
 	    romfsInit();
+        socketInitializeDefault();
+        nxlinkStdio();
     #endif
 
 	int res;
-    string tmp = SDL_GetBasePath() + string("Assets");
+
+    printf("path: ");
+    cout << GetBasePath() << endl;
+    
+    string tmp = GetBasePath() + "Assets";
     char *array = &tmp[0];
 	res = PHYSFS_mount(array, "/", 1);
     cout << "mounted " << res << endl;

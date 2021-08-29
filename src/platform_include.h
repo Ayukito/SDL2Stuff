@@ -71,3 +71,10 @@ using namespace std;
     // string FSRoot = "app0:/";
     // char* abspath = NULL;
 #endif
+
+inline string GetBasePath(){
+    #ifdef __SWITCH__
+        return "romfs:/"; // The Switch SDL doesn't seem to want to work properly, the following function just crashes the system .-.
+    #endif
+    return string(SDL_GetBasePath());
+}
