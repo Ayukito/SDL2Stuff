@@ -62,8 +62,7 @@ int main( int argc, char *argv[] ){
 
 	int res;
 
-    printf("path: ");
-    cout << GetBasePath() << endl;
+    cout << "path: " << GetBasePath() << endl;
     
     string tmp = GetBasePath() + "Assets";
     char *array = &tmp[0];
