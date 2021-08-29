@@ -55,3 +55,4 @@ DerivedData/
 /*.gcno
 
 *.DS_Store
+.vscode/settings.json
