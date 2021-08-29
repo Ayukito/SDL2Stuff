@@ -67,7 +67,7 @@ else ifeq ($(uname_S), Linux)
     #LIBGL = -lGL -lglut
     build_target := all_linux
     STD := -std=gnu17
-    LDFLAGS := $(shell sdl2-config --libs)
+    LDFLAGS := $(shell sdl2-config --libs)  -lphysfs
     CXXFLAGS += $(shell sdl2-config --cflags) -no-pie
 endif
 
@@ -96,10 +96,11 @@ mac: osxapp
 windows:
     ifeq ($(DYNAMIC), true)
 		cp $(WINDIR)/lib/*.dll $(BUILDDIR)
-		cp -R ./Assets $(BUILDDIR)
     endif
+	cp -R ./Assets $(BUILDDIR)
 
 linux: 
+	cp -R ./Assets $(BUILDDIR)
 
 $(BUILDDIR)/$(APPNAME): $(obj)
 	$(CC) $(STD) $(CXXFLAGS) -o $@ $^ $(LDFLAGS)
