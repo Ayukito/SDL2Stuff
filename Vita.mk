@@ -38,7 +38,7 @@ $(BUILDDIR)/$(PROJECT).vpk: $(BUILDDIR)/eboot.bin $(BUILDDIR)/param.sfo
 		--add deps/Vita/sce_sys/livearea/contents/bg.png=sce_sys/livearea/contents/bg.png \
 		--add deps/Vita/sce_sys/livearea/contents/startup.png=sce_sys/livearea/contents/startup.png \
 		--add deps/Vita/sce_sys/livearea/contents/template.xml=sce_sys/livearea/contents/template.xml \
-		--add Resources/test.txt=Resources/test.txt \
+		--add Assets/test.txt=Assets/test.txt \
 	$(BUILDDIR)/$(PROJECT).vpk
     # TODO: Add batch Resource adding
 
