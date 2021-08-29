@@ -59,11 +59,7 @@ int main( int argc, char *argv[] ){
     #endif
 
 	int res;
-    string tmp = FSRoot + "Assets";
-    if (abspath != NULL) {
-        setupPath();
-        tmp = abspath + tmp;
-    }
+    string tmp = SDL_GetBasePath() + string("Assets");
     char *array = &tmp[0];
 	res = PHYSFS_mount(array, "/", 1);
     cout << "mounted " << res << endl;

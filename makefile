@@ -39,7 +39,7 @@ endif
 ifeq ($(uname_S), Windows)
     #LIBGL = -lGL -lglut
     build_target := all_windows
-    STD := -std=c11
+    STD := -std=c17
     INCDIR += -I$(WINDIR)/include
     LIBDIR += -L$(WINDIR)/lib
 	ifneq ($(DEBUG), true)
@@ -57,7 +57,7 @@ ifeq ($(uname_S), Windows)
 else ifeq ($(uname_S), Darwin)
     #LIBGL = -framework OpenGL -framework GLUT
     build_target := all_mac
-    STD := -std=gnu11
+    STD := -std=gnu17
     INCDIR += -I$(MACDIR)/include
     LIBDIR += -L$(MACDIR)/lib
     LDFLAGS := -F$(MACDIR)/Frameworks -Wl,-rpath,@executable_path/../Frameworks -framework SDL2
@@ -66,7 +66,7 @@ else ifeq ($(uname_S), Darwin)
 else ifeq ($(uname_S), Linux)
     #LIBGL = -lGL -lglut
     build_target := all_linux
-    STD := -std=gnu11
+    STD := -std=gnu17
     LDFLAGS := $(shell sdl2-config --libs)
     CXXFLAGS += $(shell sdl2-config --cflags) -no-pie
 endif

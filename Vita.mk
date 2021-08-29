@@ -11,7 +11,7 @@ PROJECT_TITLEID := VSDK00007
 PROJECT := SDL2Stuff
 BUILDDIR = build
 CFLAGS += -Wl,-q
-CXXFLAGS += -Wl,-q -std=c++11
+CXXFLAGS += -Wl,-q -std=c++17
 
 INCDIR = -I./deps/include -Ideps/Vita/common
 
