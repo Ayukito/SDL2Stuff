@@ -7,30 +7,31 @@ Plans are to make some sort of game, but I'm still just learning C++, makefiles,
 - [x] Desktop Support 
 - [x] Vita and Switch Support 
 - [x] iOS Support
-- [ ] Android Support  
+- [ ] Android Support (WIP!)  
 - [ ] Actually make something cool  
   
   
 ### Windows:  
-Builds using MinGW64  
-Builds with includes and .DLLs sourced from SDL2-2.0.14 MinGW Devel.  
-Builds dynamically, but has a switch to change that in the makefile. Static libs are not in repo.  
+Builds using MinGW64 through MSys2 but you can probably use Visual Studio or normal MinGW with some changes.  
+SDL2 includes and .DLL sourced from SDL2-2.0.14 MinGW Devel.  
+PhysFS .DLL is built using MinGW64 and the includes are sourced from the 3.0.2 release.  
+Builds dynamically with .DLL files from MinGW64 (libgcc_s_seh-1, libstd++-6, and libwinpthread-1), but has a boolean to build statically in the makefile. Static libs are not in repo.  
   
 ### Mac:  
-Builds using clang with SDL2 installed through brew.  
+Builds using clang with SDL2 and PhysFS installed through brew.  
 Bundles SDL2.framework into the .app for easy distribution.  
-Technically built statically as SDL2 is currently the only dependancy not included with the OS.  
+Technically built statically as SDL2 is currently the only dependancy not included with the OS. (Need to confirm for PhysFS)  
 
 ### iOS:  
-Open the included xcodeproj and add  XCode/SDL from the [SDL source](https://github.com/libsdl-org/SDL) to your Frameworks(?) to have the required libraries  
-Included in the repo is the iOS includes for SDL2 and the needed assets to create an iOS app  
+Open the included xcodeproj and add  XCode/SDL from the [SDL source](https://github.com/libsdl-org/SDL) to your Frameworks to have the required libraries.  
+Included in the repo are the iOS includes for SDL2, static PhysFS lib, and the needed assets to create an iOS app.  
   
 ### Linux:  
-Builds using gnu g++ with libsdl2-dev installed through the package manager.  
+Builds using gnu g++ with libsdl2-dev and libphysfs-dev installed through the package manager.  
 Builds with -no-pie because otherwise it's seen as a Shared Library for some reason.  
 No idea if this can be statically built on Linux or not.  
   
 ### Vita and Switch:  
-Both build using their respective homebrew SDKs and their ports of SDL2 and PhysFS  
-Switch's ifdef is \_\_SWITCH\_\_ and Vita's ifdef is \_\_VITA\_\_  
-The switch makefile is dumb and dumps all the .o files into /build
+Both build using their respective homebrew SDKs and their ports of SDL2 and PhysFS.  
+The Switch ifdef is \_\_SWITCH\_\_ and the Vita ifdef is \_\_VITA\_\_  
+The Switch makefile is dumb and dumps all the .o files into /build.
