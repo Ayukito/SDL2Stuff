@@ -63,6 +63,7 @@ else ifeq ($(uname_S), Darwin)
     LDFLAGS := -F$(MACDIR)/Frameworks -Wl,-rpath,@executable_path/../Frameworks -framework SDL2
     LDFLAGS += ./deps/MacOS/lib/libphysfs.a # Static link to physfs, installed with brew
     LDFLAGS += -Wl,-framework,CoreFoundation -Wl,-framework,IOKit -Wl,-framework,Foundation # Frameworks for physfs
+    LDFLAGS += -mmacosx-version-min=10.9 # target MacOS 10.9
 else ifeq ($(uname_S), Linux)
     #LIBGL = -lGL -lglut
     build_target := all_linux
