@@ -61,7 +61,7 @@ else ifeq ($(uname_S), Darwin)
     INCDIR += -I$(MACDIR)/include
     LIBDIR += -L$(MACDIR)/lib
     LDFLAGS := -F$(MACDIR)/Frameworks -Wl,-rpath,@executable_path/../Frameworks -framework SDL2
-    LDFLAGS += /usr/local/lib/libphysfs.a # Static link to physfs, installed with brew
+    LDFLAGS += ./deps/MacOS/lib/libphysfs.a # Static link to physfs, installed with brew
     LDFLAGS += -Wl,-framework,CoreFoundation -Wl,-framework,IOKit -Wl,-framework,Foundation # Frameworks for physfs
 else ifeq ($(uname_S), Linux)
     #LIBGL = -lGL -lglut
