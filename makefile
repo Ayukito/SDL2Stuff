@@ -13,7 +13,7 @@ MACDIR=./deps/MacOS
 WINDIR=./deps/Windows
 LNXDIR=./deps/Linux
 
-INCDIR = -I./deps/include
+INCDIR = -I./deps/include -I./ext
 LIBDIR =
 
 CXXFLAGS = -Wall
