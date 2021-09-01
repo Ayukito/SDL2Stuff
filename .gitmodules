@@ -1,6 +1,3 @@
 [submodule "SDL"]
 	path = ext/SDL
 	url = https://github.com/libsdl-org/SDL
-[submodule "physfs"]
-	path = ext/physfs
-	url = https://github.com/icculus/physfs
