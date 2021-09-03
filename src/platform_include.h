@@ -1,20 +1,19 @@
 #include <string>
+#include <iostream>
+#include <string>
+#include <string.h>
 using namespace std;
 #ifdef _WIN64
     //define something for Windows (64-bit)
-    #include <SDL2/SDL.h>
 #elif _WIN32
-    //define something for Windows (32-bit)
-    #include <SDL2/SDL.h>
+    //define something for Windows (32-bit
 #elif __APPLE__
     #include "TargetConditionals.h"
-    #ifdef TARGET_OS_IPHONE
+    #if TARGET_OS_IPHONE == 1
         // iOS
-        #include <SDL2/SDL.h>
     #else
         // MacOS
         #define TARGET_OS_OSX 1
-        #include <SDL2/SDL.h>
     #endif
 #elif __ANDROID__
     // Android
@@ -22,16 +21,14 @@ using namespace std;
     #include <physfs.h>
 #elif __linux
     // linux
-    #include <SDL2/SDL.h>
 #elif __SWITCH__
     #include <switch.h>
-    #include <SDL2/SDL.h>
 #elif __VITA__
-    #include <SDL2/SDL.h>
 #endif
 
 #ifndef __ANDROID__
     #include <PhysFS/physfs.h>
+    #include <SDL2/SDL.h>
 #endif
 
 inline string GetBasePath(){
