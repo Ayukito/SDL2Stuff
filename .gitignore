@@ -56,3 +56,5 @@ DerivedData/
 
 *.DS_Store
 .vscode/settings.json
+*.gradle
+*.idea

@@ -46,6 +46,12 @@ using namespace std;
         //     }
         // }
     #endif
+#elif __ANDROID__
+    // Android
+    #include <SDL.h>
+    #include <physfs.h>
+    // string FSRoot = "";
+    // char* abspath = NULL;
 #elif __linux
     // linux
     #include <SDL2/SDL.h>
@@ -72,9 +78,16 @@ using namespace std;
     // char* abspath = NULL;
 #endif
 
+#ifndef __ANDROID__
+    #include <PhysFS/physfs.h>
+#endif
+
 inline string GetBasePath(){
     #ifdef __SWITCH__
         return "romfs:/"; // The Switch SDL doesn't seem to want to work properly, the following function just crashes the system .-.
+    #endif
+    #ifdef __linux
+        return "";
     #endif
     return string(SDL_GetBasePath());
 }
