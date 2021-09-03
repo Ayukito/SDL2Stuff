@@ -9,17 +9,18 @@ using namespace std;
     //define something for Windows (32-bit
 #elif __APPLE__
     #include "TargetConditionals.h"
-    #if TARGET_OS_IPHONE == 1
-        // iOS
-    #else
+    #if defined(__APPLE__) && defined(__MACH__)
         // MacOS
-        #define TARGET_OS_OSX 1
+        #define __MACOS__ 1
+    #else
+        // iOS
+        #define __iOS__ 1
     #endif
 #elif __ANDROID__
     // Android
     #include <SDL.h>
     #include <physfs.h>
-#elif __linux
+#elif __linux__
     // linux
 #elif __SWITCH__
     #include <switch.h>
