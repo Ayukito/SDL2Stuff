@@ -74,7 +74,7 @@ int main( int argc, char *argv[] ){
     PHYSFS_init(NULL);
 
 #ifdef __SWITCH__
-    romfsInit();
+        romfsInit();
         socketInitializeDefault();
         nxlinkStdio();
 #endif
