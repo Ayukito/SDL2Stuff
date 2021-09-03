@@ -86,8 +86,8 @@ inline string GetBasePath(){
     #ifdef __SWITCH__
         return "romfs:/"; // The Switch SDL doesn't seem to want to work properly, the following function just crashes the system .-.
     #endif
-    #ifdef __linux
-        return "";
+    #ifdef __ANDROID__
+        return string(SDL_AndroidGetInternalStoragePath());
     #endif
     return string(SDL_GetBasePath());
 }

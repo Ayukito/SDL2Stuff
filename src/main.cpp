@@ -24,6 +24,39 @@ string PHYSFS_readFile( string path){
     return output;
 }
 
+char* file_read(const char* filename) {
+    SDL_RWops *rw = SDL_RWFromFile(filename, "rb");
+    if (rw == NULL) return NULL;
+
+    Sint64 res_size = SDL_RWsize(rw);
+    char* res = (char*)malloc(res_size + 1);
+
+    Sint64 nb_read_total = 0, nb_read = 1;
+    char* buf = res;
+    while (nb_read_total < res_size && nb_read != 0) {
+        nb_read = SDL_RWread(rw, buf, 1, (res_size - nb_read_total));
+        nb_read_total += nb_read;
+        buf += nb_read;
+    }
+    SDL_RWclose(rw);
+    if (nb_read_total != res_size) {
+        free(res);
+        return NULL;
+    }
+
+    res[nb_read_total] = '\0';
+    return res;
+}
+
+void print_physfs_files(string path){
+    char** rc = PHYSFS_enumerateFiles((path.c_str()));
+    char** i;
+    for (i = rc; *i != NULL; i++){
+        SDL_Log("File %s", *i);
+        SDL_Log("IsDir: %s", PHYSFS_isDirectory(*i));
+    }
+}
+
 int main( int argc, char *argv[] ){
     // Need to initialize these two on switch specifically, otherwise nothing happens
     if (SDL_Init(SDL_INIT_VIDEO | SDL_INIT_JOYSTICK) < 0){
@@ -60,11 +93,14 @@ int main( int argc, char *argv[] ){
 
     int res;
 
-    cout << "path: " << GetBasePath() << endl;
+    SDL_Log("Base Path: %s", GetBasePath().c_str());
+    char* file = file_read("Assets/test.txt");
+    SDL_Log("file: %s", file);
 
-    string tmp = GetBasePath() + "Assets";
+    string tmp = GetBasePath() + "/Assets";
     char *array = &tmp[0];
     res = PHYSFS_mount(array, "/", 1);
+    print_physfs_files("/");
     SDL_Log("Mounted: %d", res);
 
     bool exists = false;
