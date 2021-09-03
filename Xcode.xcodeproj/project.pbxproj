@@ -9,6 +9,15 @@
 /* Begin PBXBuildFile section */
 		BA12E9F826DF1DB400602771 /* libSDL2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BA12E9F626DF1DB400602771 /* libSDL2.a */; };
 		BA12E9F926DF1DB400602771 /* libSDLmain.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BA12E9F726DF1DB400602771 /* libSDLmain.a */; };
+		BA404AD926E1F21000B2F4E2 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BA4F294926B28FAC003065CF /* main.cpp */; };
+		BA404ADB26E1F33600B2F4E2 /* libphysfs.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BA404ADA26E1F33600B2F4E2 /* libphysfs.a */; };
+		BA404ADD26E1F34100B2F4E2 /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA404ADC26E1F34100B2F4E2 /* SDL2.framework */; };
+		BA404ADF26E1F36B00B2F4E2 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA404ADE26E1F36B00B2F4E2 /* CoreFoundation.framework */; };
+		BA404AE126E1F38600B2F4E2 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA404AE026E1F38600B2F4E2 /* IOKit.framework */; };
+		BA404AE326E1F3A400B2F4E2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA404AE226E1F3A400B2F4E2 /* Foundation.framework */; };
+		BA404AE526E1F49F00B2F4E2 /* SDL2.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = BA404ADC26E1F34100B2F4E2 /* SDL2.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BA404AEB26E1F5EA00B2F4E2 /* test.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = BA5BDBFB26C60BBE00514EDA /* test.txt */; };
+		BA404AEE26E1F9F000B2F4E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA7D239426B2B78200F9AF77 /* Assets.xcassets */; };
 		BA4AD10626B285120060B459 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA4AD10526B285120060B459 /* UIKit.framework */; };
 		BA4AD10826B285160060B459 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA4AD10726B285160060B459 /* Foundation.framework */; };
 		BA4AD10A26B2851D0060B459 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA4AD10926B2851D0060B459 /* AudioToolbox.framework */; };
@@ -27,6 +36,26 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		BA404AE426E1F49500B2F4E2 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				BA404AE526E1F49F00B2F4E2 /* SDL2.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BA404AE626E1F4CE00B2F4E2 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = Assets;
+			dstSubfolderSpec = 7;
+			files = (
+				BA404AEB26E1F5EA00B2F4E2 /* test.txt in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BA5BDBF626C6046500514EDA /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 12;
@@ -42,7 +71,13 @@
 /* Begin PBXFileReference section */
 		BA12E9F626DF1DB400602771 /* libSDL2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSDL2.a; path = deps/iOS/lib/libSDL2.a; sourceTree = "<group>"; };
 		BA12E9F726DF1DB400602771 /* libSDLmain.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSDLmain.a; path = deps/iOS/lib/libSDLmain.a; sourceTree = "<group>"; };
-		BA4AD0E226B284440060B459 /* SDL2Stuff.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SDL2Stuff.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA404ACA26E1F1D400B2F4E2 /* Mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mac.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA404ADA26E1F33600B2F4E2 /* libphysfs.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libphysfs.a; path = deps/MacOS/lib/libphysfs.a; sourceTree = "<group>"; };
+		BA404ADC26E1F34100B2F4E2 /* SDL2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2.framework; path = deps/MacOS/Frameworks/SDL2.framework; sourceTree = "<group>"; };
+		BA404ADE26E1F36B00B2F4E2 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/System/Library/Frameworks/CoreFoundation.framework; sourceTree = DEVELOPER_DIR; };
+		BA404AE026E1F38600B2F4E2 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/System/Library/Frameworks/IOKit.framework; sourceTree = DEVELOPER_DIR; };
+		BA404AE226E1F3A400B2F4E2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		BA4AD0E226B284440060B459 /* iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA4AD10526B285120060B459 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		BA4AD10726B285160060B459 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		BA4AD10926B2851D0060B459 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -62,6 +97,18 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		BA404AC726E1F1D400B2F4E2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BA404AE326E1F3A400B2F4E2 /* Foundation.framework in Frameworks */,
+				BA404AE126E1F38600B2F4E2 /* IOKit.framework in Frameworks */,
+				BA404ADF26E1F36B00B2F4E2 /* CoreFoundation.framework in Frameworks */,
+				BA404ADD26E1F34100B2F4E2 /* SDL2.framework in Frameworks */,
+				BA404ADB26E1F33600B2F4E2 /* libphysfs.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BA4AD0DF26B284440060B459 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -99,7 +146,8 @@
 		BA4AD0E326B284440060B459 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				BA4AD0E226B284440060B459 /* SDL2Stuff.app */,
+				BA4AD0E226B284440060B459 /* iOS.app */,
+				BA404ACA26E1F1D400B2F4E2 /* Mac.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -107,6 +155,11 @@
 		BA4AD10026B2849C0060B459 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BA404AE226E1F3A400B2F4E2 /* Foundation.framework */,
+				BA404AE026E1F38600B2F4E2 /* IOKit.framework */,
+				BA404ADE26E1F36B00B2F4E2 /* CoreFoundation.framework */,
+				BA404ADC26E1F34100B2F4E2 /* SDL2.framework */,
+				BA404ADA26E1F33600B2F4E2 /* libphysfs.a */,
 				BA12E9F626DF1DB400602771 /* libSDL2.a */,
 				BA12E9F726DF1DB400602771 /* libSDLmain.a */,
 				BA5BDBF426C6041200514EDA /* libphysfs.a */,
@@ -138,9 +191,28 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		BA4AD0E126B284440060B459 /* SDL2Stuff */ = {
+		BA404AC926E1F1D400B2F4E2 /* Mac */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BA4AD0FB26B284450060B459 /* Build configuration list for PBXNativeTarget "SDL2Stuff" */;
+			buildConfigurationList = BA404AD826E1F1D500B2F4E2 /* Build configuration list for PBXNativeTarget "Mac" */;
+			buildPhases = (
+				BA404AC626E1F1D400B2F4E2 /* Sources */,
+				BA404AC726E1F1D400B2F4E2 /* Frameworks */,
+				BA404AC826E1F1D400B2F4E2 /* Resources */,
+				BA404AE426E1F49500B2F4E2 /* CopyFiles */,
+				BA404AE626E1F4CE00B2F4E2 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Mac;
+			productName = Mac;
+			productReference = BA404ACA26E1F1D400B2F4E2 /* Mac.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BA4AD0E126B284440060B459 /* iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BA4AD0FB26B284450060B459 /* Build configuration list for PBXNativeTarget "iOS" */;
 			buildPhases = (
 				BA4AD0DE26B284440060B459 /* Sources */,
 				BA4AD0DF26B284440060B459 /* Frameworks */,
@@ -151,9 +223,9 @@
 			);
 			dependencies = (
 			);
-			name = SDL2Stuff;
+			name = iOS;
 			productName = TestC;
-			productReference = BA4AD0E226B284440060B459 /* SDL2Stuff.app */;
+			productReference = BA4AD0E226B284440060B459 /* iOS.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -162,15 +234,19 @@
 		BA4AD0DA26B284440060B459 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1250;
+				LastUpgradeCheck = 1300;
 				TargetAttributes = {
+					BA404AC926E1F1D400B2F4E2 = {
+						CreatedOnToolsVersion = 13.0;
+						ProvisioningStyle = Automatic;
+					};
 					BA4AD0E126B284440060B459 = {
 						CreatedOnToolsVersion = 12.5.1;
 						ProvisioningStyle = Automatic;
 					};
 				};
 			};
-			buildConfigurationList = BA4AD0DD26B284440060B459 /* Build configuration list for PBXProject "iOS" */;
+			buildConfigurationList = BA4AD0DD26B284440060B459 /* Build configuration list for PBXProject "Xcode" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -183,12 +259,21 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				BA4AD0E126B284440060B459 /* SDL2Stuff */,
+				BA4AD0E126B284440060B459 /* iOS */,
+				BA404AC926E1F1D400B2F4E2 /* Mac */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		BA404AC826E1F1D400B2F4E2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BA404AEE26E1F9F000B2F4E2 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BA4AD0E026B284440060B459 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -200,6 +285,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		BA404AC626E1F1D400B2F4E2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BA404AD926E1F21000B2F4E2 /* main.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BA4AD0DE26B284440060B459 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -211,13 +304,109 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		BA404AD626E1F1D500B2F4E2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = x86_64;
+				ASSETCATALOG_COMPILER_ALTERNATE_APPICON_NAMES = "";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_STANDALONE_ICON_BEHAVIOR = all;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_ENTITLEMENTS = Mac.entitlements;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = PS823CSMA6;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_USER_SELECTED_FILES = readonly;
+				EXCLUDED_ARCHS = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/deps/MacOS/Frameworks",
+				);
+				GENERATE_INFOPLIST_FILE = NO;
+				HEADER_SEARCH_PATHS = (
+					"\"$(SRCROOT)/deps/include/\"",
+					/usr/local/include,
+				);
+				INFOPLIST_FILE = "";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/deps/MacOS/lib",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MARKETING_VERSION = 1.0;
+				OTHER_CODE_SIGN_FLAGS = "--deep";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Lynn.SDL2Stuff.Mac;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+			};
+			name = Debug;
+		};
+		BA404AD726E1F1D500B2F4E2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = x86_64;
+				ASSETCATALOG_COMPILER_ALTERNATE_APPICON_NAMES = "";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_STANDALONE_ICON_BEHAVIOR = all;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_ENTITLEMENTS = Mac.entitlements;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = PS823CSMA6;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_USER_SELECTED_FILES = readonly;
+				EXCLUDED_ARCHS = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/deps/MacOS/Frameworks",
+				);
+				GENERATE_INFOPLIST_FILE = NO;
+				HEADER_SEARCH_PATHS = (
+					"\"$(SRCROOT)/deps/include/\"",
+					/usr/local/include,
+				);
+				INFOPLIST_FILE = "";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/deps/MacOS/lib",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MARKETING_VERSION = 1.0;
+				OTHER_CODE_SIGN_FLAGS = "--deep";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Lynn.SDL2Stuff.Mac;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+			};
+			name = Release;
+		};
 		BA4AD0F926B284450060B459 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -263,6 +452,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -276,7 +466,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -316,6 +506,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -346,7 +537,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/deps/iOS/lib",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.Lynn.SDLTest.SDL2Stuff;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Lynn.SDL2Stuff.iOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -375,7 +566,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/deps/iOS/lib",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.Lynn.SDLTest.SDL2Stuff;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Lynn.SDL2Stuff.iOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -384,7 +575,16 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		BA4AD0DD26B284440060B459 /* Build configuration list for PBXProject "iOS" */ = {
+		BA404AD826E1F1D500B2F4E2 /* Build configuration list for PBXNativeTarget "Mac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BA404AD626E1F1D500B2F4E2 /* Debug */,
+				BA404AD726E1F1D500B2F4E2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BA4AD0DD26B284440060B459 /* Build configuration list for PBXProject "Xcode" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BA4AD0F926B284450060B459 /* Debug */,
@@ -393,7 +593,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BA4AD0FB26B284450060B459 /* Build configuration list for PBXNativeTarget "SDL2Stuff" */ = {
+		BA4AD0FB26B284450060B459 /* Build configuration list for PBXNativeTarget "iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BA4AD0FC26B284450060B459 /* Debug */,
