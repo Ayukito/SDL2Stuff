@@ -48,15 +48,6 @@ char* file_read(const char* filename) {
     return res;
 }
 
-void print_physfs_files(string path){
-    char** rc = PHYSFS_enumerateFiles((path.c_str()));
-    char** i;
-    for (i = rc; *i != NULL; i++){
-        SDL_Log("File %s", *i);
-        SDL_Log("IsDir: %s", PHYSFS_isDirectory(*i));
-    }
-}
-
 int main( int argc, char *argv[] ){
     // Need to initialize these two on switch specifically, otherwise nothing happens
     if (SDL_Init(SDL_INIT_VIDEO | SDL_INIT_JOYSTICK) < 0){
@@ -96,12 +87,14 @@ int main( int argc, char *argv[] ){
     SDL_Log("Base Path: %s", GetBasePath().c_str());
     char* file = file_read("Assets/test.txt");
     SDL_Log("file: %s", file);
-
-    string tmp = GetBasePath() + "/Assets";
+    //ToDo: Use SDL RWops on Android instead of physfs, make filesystem wrapper. Use PHYSFS_mountMemory if using .zip to mount
+    string tmp = GetBasePath() + "Assets";
     char *array = &tmp[0];
     res = PHYSFS_mount(array, "/", 1);
-    print_physfs_files("/");
     SDL_Log("Mounted: %d", res);
+    if (res == 0){
+        SDL_Log("PhysFS Error: %s", PHYSFS_getLastError());
+    }
 
     bool exists = false;
 
@@ -109,7 +102,7 @@ int main( int argc, char *argv[] ){
     SDL_Log("Exists: %d", exists?1:0);
 
     string txt = PHYSFS_readFile("/test.txt");
-    cout << txt << endl;
+    SDL_Log("Text: %s", txt.c_str());
 
     SDL_Event event;
     bool running = true;
