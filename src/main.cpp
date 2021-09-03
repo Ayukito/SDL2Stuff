@@ -93,7 +93,7 @@ int main( int argc, char *argv[] ){
     res = PHYSFS_mount(array, "/", 1);
     SDL_Log("Mounted: %d", res);
     if (res == 0){
-        SDL_Log("PhysFS Error: %s", PHYSFS_getLastError());
+        SDL_Log("PhysFS Error: %s", PHYSFS_getErrorByCode(PHYSFS_getLastErrorCode()));
     }
 
     bool exists = false;
